@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import noAvatar from '../../images/noavatar.svg';
-
-import styles from './Profile.module.css';
+import styles from '../Profile/Profile.module.css';
 
 const Profile = ({ avatar, name, tag, location, stats }) => (
   <div className={styles.profile}>

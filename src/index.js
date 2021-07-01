@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App.jsx";
+import App from "./App";
+
+import "modern-normalize/modern-normalize.css";
+import "./App.css";
 
 ReactDOM.render(
   <React.StrictMode>
