@@ -1,47 +1,55 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css'
+import css from './Profile.module.css';
+
+import defaultImage from './Images/default.jpg';
+
 export default function Profile({
     name,
     tag,
     location,
-    avatar,
+    avatar = defaultImage,
     stats,
 }) {
     return (
         <div className={css.profile}>
   <div className={css.description}>
     <img
-      src="https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
-      alt="Аватар пользователя"
+      src={avatar}
+            alt="Аватар пользователя"
+            width ="280"
       className={css.avatar}
     />
-    <p className={css.name}>Petra Marica</p>
-                <p className={css.tag}>@pmarica</p>
-                <p className={css.location}>Salvador, Brasil</p>
+    <p className={css.name}>{name}</p>
+                <p className={css.tag}>@{tag}</p>
+                <p className={css.location}>{location}</p>
   </div>
 
             <ul className={css.stats}>
     <li>
-      <span className={css.label}>Followers</span>
-      <span className={css.quantity}>1000</span>
+      <span className={css.label}>Followers </span>
+      <span className={css.quantity}>{stats.followers}</span>
     </li>
     <li>
-      <span className={css.label}>Views</span>
-      <span className={css.quantity}>2000</span>
+      <span className={css.label}>Views </span>
+      <span className={css.quantity}>{stats.views}</span>
     </li>
     <li>
-      <span className={css.label}>Likes</span>
-      <span className={css.quantity}>3000</span>
+      <span className={css.label}>Likes </span>
+      <span className={css.quantity}>{stats.likes}</span>
     </li>
   </ul>
 </div>
     )
 };
 
+Profile.defaultProps = {
+  avatar:defaultImage,
+};
+
 Profile.propTypes = {
-  name: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.node,
-  stats: PropTypes.number,
+  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
