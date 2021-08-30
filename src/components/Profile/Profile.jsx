@@ -16,7 +16,7 @@ export default function Profile({
     <img
       src={avatar}
             alt="Аватар пользователя"
-            width ="280"
+            width ="140"
       className={css.avatar}
     />
     <p className={css.name}>{name}</p>
