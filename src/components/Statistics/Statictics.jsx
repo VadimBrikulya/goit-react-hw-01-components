@@ -7,27 +7,20 @@ export default function Statistic({
 
 {
     return (
-        <section className="statistics">
-  <h2 className={css.title}>Upload stats</h2>
+        <section className={css.statistics}>
+  {title && <h2 className={css.title}>{title}</h2>}
 
-  <ul className="stat-list">
-    <li className="item">
-      <span className="label">.docx</span>
-      <span className="percentage">4%</span>
-    </li>
-    <li className="item">
-      <span className="label">.mp3</span>
-      <span className="percentage">14%</span>
-    </li>
-    <li className="item">
-      <span className="label">.pdf</span>
-      <span className="percentage">41%</span>
-    </li>
-    <li className="item">
-      <span className="label">.mp4</span>
-      <span className="percentage">12%</span>
-    </li>
-  </ul>
+        <ul className={css['stat-list']} >
+
+          {stats.map(({ id, label, percentage }) => (
+        <li
+          className={css.item} key={id}
+        >
+          <span className={css.label}>{label}</span>
+          <span className={css.percentage}>{percentage}%</span>
+            </li>
+            ))}
+        </ul>
 </section>
 
     )

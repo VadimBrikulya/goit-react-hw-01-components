@@ -26,7 +26,7 @@ export default function Profile({
 
             <ul className={css.stats}>
     <li>
-      <span className={css.label}>Followers </span>
+      <span className={css.label} >Followers </span>
       <span className={css.quantity}>{stats.followers}</span>
     </li>
     <li>
